@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Admin Login</h3>
+
+<form method="post">
+
+<input type="password" name="password"
+ class="form-control mb-3"
+ placeholder="Enter Password">
+
+<button class="btn btn-success">Login</button>
+
+{% if error %}
+<p class="text-danger mt-2">{{ error }}</p>
+{% endif %}
+
+</form>
+
+{% endblock %}

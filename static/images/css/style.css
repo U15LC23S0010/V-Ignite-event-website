@@ -1,0 +1,255 @@
+/* =========================
+   GENERAL STYLES
+========================= */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+/* =========================
+   LOGO
+========================= */
+.logo-container {
+    text-align: center;
+    padding: 15px 0;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.main-logo {
+    width: 120px;
+    height: auto;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    background: #2193b0 !important;
+    color: #fff;
+}
+
+.navbar .navbar-brand {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.navbar .btn {
+    font-weight: 500;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer.footer {
+    background: #222;
+    color: #fff;
+    padding: 30px 0;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+footer.footer a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+footer.footer a:hover {
+    text-decoration: underline;
+}
+
+footer.footer .social-icons a {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0 5px;
+}
+
+footer.footer .social-icons a:hover {
+    color: #ffcc00;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn-primary {
+    background-color: #2193b0;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #176c8a;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #b02a37;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* =========================
+   EVENTS LIST / CARDS
+========================= */
+.event-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+/* Event Details Page */
+.event-detail-card {
+    background: #fff;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.event-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2193b0;
+}
+
+.event-about {
+    font-size: 16px;
+    color: #444;
+    margin: 15px 0;
+}
+
+.section-box {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.org-card,
+.team-card {
+    background: #fff;
+    padding: 10px 12px;
+    margin: 6px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   ADMIN PANEL
+========================= */
+.card {
+    border-radius: 15px;
+}
+
+input.form-control,
+textarea.form-control {
+    border-radius: 8px;
+    padding: 10px;
+}
+
+table.table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table.table th,
+table.table td {
+    vertical-align: middle !important;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+.back-btn {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 8px 18px;
+    border-radius: 20px;
+    background: #2193b0;
+    color: white;
+    font-weight: bold;
+}
+
+.back-btn:hover {
+    background: #176c8a;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+.dashboard-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.dashboard-card h3 {
+    font-weight: 600;
+    color: #2193b0;
+}
+
+.dashboard-card p {
+    font-size: 1.1rem;
+    color: #555;
+}

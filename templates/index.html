@@ -1,0 +1,224 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+
+body{
+    background: linear-gradient(135deg,#2193b0,#6dd5ed);
+    min-height:100vh;
+}
+
+/* Buttons */
+.top-buttons{
+    display:flex;
+    gap:10px;
+    margin:20px;
+}
+
+/* Search */
+.search-box{
+    display:flex;
+    justify-content:center;
+    margin:20px 0;
+}
+
+.search-box input{
+    width:300px;
+    padding:12px 20px;
+    border:none;
+    border-radius:25px;
+    outline:none;
+    background: linear-gradient(45deg,#2193b0,#6dd5ed);
+    color:white;
+    font-weight:bold;
+    text-align:center;
+}
+
+/* Card Link */
+.event-link{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* Event Card */
+.event-card{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    transition:0.3s;
+    height:100%;
+    cursor:pointer;
+}
+
+.event-card:hover{
+    transform:translateY(-10px) scale(1.05);
+}
+
+/* Icon */
+.event-icon{
+    font-size:50px;
+    margin-bottom:15px;
+    color:#2193b0;
+}
+
+/* Title */
+.event-title{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+/* Info */
+.event-info{
+    color:gray;
+    font-size:14px;
+    margin:5px 0;
+}
+
+</style>
+
+
+<!-- Top Buttons -->
+<div class="top-buttons">
+
+    <a href="javascript:history.back()" class="btn btn-light fw-bold">
+        ⬅ Back
+    </a>
+
+    <a href="/logout" class="btn btn-danger fw-bold">
+        🔓 Logout
+    </a>
+
+</div>
+
+
+<!-- Search -->
+<div class="search-box">
+    <input 
+        type="text"
+        id="searchInput"
+        placeholder="Search events..."
+        onkeyup="searchEvents()"
+    >
+</div>
+
+
+<!-- Events -->
+<div class="container">
+
+<div class="row g-4 justify-content-center">
+
+
+{% for event in events %}
+
+<div class="col-md-4 col-sm-6 event-box">
+
+<a href="/event/{{ event.id}}" class="event-link">
+
+<div class="event-card">
+
+
+<!-- Icon -->
+<div class="event-icon">
+
+{% if "Best Manager" in event.name %}
+🏆
+{% elif "Marketing" in event.name %}
+📊
+{% elif "Finance" in event.name %}
+💹
+{% elif "Mini Project" in event.name %}
+🛠️
+{% elif "Placement" in event.name %}
+🎯
+{% elif "Debate" in event.name %}
+🎙️
+{% elif "Quiz" in event.name %}
+🧠
+{% elif "Food Fest" in event.name %}
+🍴
+{% elif "Presentation" in event.name %}
+📽️
+{% elif "Web Development" in event.name %}
+💻
+{% elif "Singing" in event.name %}
+🎤
+{% elif "Dance" in event.name %}
+💃
+{% elif "Ad Mad" in event.name %}
+📣
+{% elif "Fashion" in event.name %}
+👗
+{% elif "Photography" in event.name %}
+📷
+{% else %}
+🚀
+{% endif %}
+
+</div>
+
+
+<!-- Title -->
+<div class="event-title">
+    {{ event.name }}
+</div>
+
+
+<!-- Info -->
+<div class="event-info">
+    👤 Organizers: {{ event.organizers.split(",") | length if event.organizers else 0 }}
+</div>
+
+<div class="event-info">
+    👥 Teams: {{ event.teams | length }}
+</div>
+
+<!-- View Details Button -->
+<div style="margin-top:15px;">
+    <button class="btn btn-primary btn-sm">
+        View Details
+    </button>
+</div>
+
+</div>
+
+</a>
+
+</div>
+
+{% endfor %}
+
+
+</div>
+
+</div>
+
+
+<!-- Search Script -->
+<script>
+
+function searchEvents(){
+
+    let input = document.getElementById("searchInput").value.toLowerCase();
+
+    let boxes = document.getElementsByClassName("event-box");
+
+    for(let i=0;i<boxes.length;i++){
+
+        let title = boxes[i].getElementsByClassName("event-title")[0];
+
+        if(title.innerText.toLowerCase().includes(input)){
+            boxes[i].style.display = "";
+        }
+        else{
+            boxes[i].style.display = "none";
+        }
+    }
+}
+
+</script>
+
+{% endblock %}

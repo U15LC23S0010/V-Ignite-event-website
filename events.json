@@ -1,0 +1,776 @@
+{
+  "events": [
+    {
+      "name": "Board Room Boss",
+      "about":
+      "Decision-making,Leadership and decision-making under pressure,Team coordination and delegation skills,Time management and task prioritization,Problem-solving and crisis handling ability,Communication clarity and confidence,Strategic planning and execution,Adaptability to changing situations,Ethical decision-making and professionalism,Motivation and conflict-resolution skills",
+      
+      "logo": "images/bm.png",
+
+      "organizers": [
+        {
+          "name":"Sanjana H.",
+          "phone":"7975281867"
+        },
+        {
+          "name":"Nikita P.",
+          "phone":"9036452515"
+        },
+        {
+          "name":"Shraddha W.",
+          "phone":"6363479604"
+        },
+        {
+          "name":"Sakshi P.",
+          "phone":"9739023326"
+        },
+        {
+          "name":"Sohail J",
+          "phone":"9108173757"
+        }
+      ],
+
+      "teams": [
+        {
+          "team_name": "Code Masters",
+          "members": ["Amit S", "Rahul M", "Neha K"]
+        },
+        {
+          "team_name": "Debug Masters",
+          "members": ["Amir K", "Roshan S", "Sneha S"]
+        }
+      ]
+    },
+
+    {
+      "name": "Brand Blitz",
+      "about": "Real-world business tactics,Understanding of market trends and consumer behavior,Creativity and innovation in marketing strategies,Brand positioning and promotion techniques,Team coordination and idea presentation,Persuasion and negotiation skills,Real-world business problem analysis",
+      "logo": "images/mar.png",
+
+      "organizers": [
+      {
+
+        "name":"Manjunath B.",
+        "phone":"8721858588"
+      },
+      {
+          "name":"Jagadish L.",
+          "phone":"8105879607"
+        },
+        {
+          "name":"Shravankumar Y.",
+          "phone":"9731083305"
+        },
+        {
+          "name":"Shantveer N.",
+          "phone":"6366756084"
+        },
+        {
+          "name":"Priya P.",
+          "phone":"944897296"
+        },
+        {
+          "name":"Priya P.",
+          "phone":"944897296"
+        },
+        
+      {
+          "name":"Priya P.",
+          "phone":"944897296"
+        },
+        {
+          "name":"Laxmi B.",
+          "phone":"7411982352"
+        }
+           
+      ],
+
+      "teams": [
+        {
+          "team_name": "Code Masters",
+          "members": ["Amit", "Rahul", "Neha"]
+        },
+        {
+          "team_name": "Debug Masters",
+          "members": ["Amir", "Roshan", "Sneha"]
+        }
+      ]
+    },
+
+    {
+      "name": "Wall Street Warriors",
+      "about": "Budgeting,financial analysis,Basic knowledge of finance and accounting,Understanding of budgeting and investments,Financial decision-making skills,Risk analysis and management,Practical application of financial concepts,Time management and accuracy",
+      "logo": "images/fin.png",
+
+      "organizers": [
+        
+      {
+
+        "name":"Aagam",
+        "phone":"7899391579"
+      },
+      {
+          "name":"Arvind",
+          "phone":"6363466794"
+        },
+        {
+          "name":"Praveen",
+          "phone":"6363976152"
+        },
+        {
+          "name":"Bhagyavant",
+          "phone":"7795698535"
+        },
+        {
+          "name":"Shivaganga",
+          "phone":"8073010780"
+        },
+        {
+          "name":"Madhu",
+          "phone":"9108496061"
+        },
+        
+      {
+          "name":"Sanjana G.",
+          "phone":"8217029792"
+        },
+        {
+          "name":"Ananya K.",
+          "phone":"7975592017"
+        }
+      ],
+
+      "teams": [
+        {
+          "team_name": "Innovators",
+          "members": ["Vinayak", "Sudeep", "Shivanand"]
+        }
+      ]
+    },
+
+    {
+      "name": "Innovation Pitch",
+      "about":"practical application of knowledge of programming languages,Problem identification and solution approach,Technical implementation and accuracy,Project planning and documentation,Teamwork and role distribution,Learning outcomes and technical depth",
+      "logo": "images/code.png",
+
+      "organizers": [
+        {
+          "name": "Vinayak K.",
+          "phone": "8618499467"
+        },
+        {
+          "name": "Suma",
+          "phone": "9148362373"
+        },
+        {
+          "name": "Spoorti M.",
+          "phone": "8217737902"
+        },
+        {
+          "name": "Srushti S.",
+          "phone": "8073838773"
+        },
+        {
+          "name": "Rajeshwari S",
+          "phone": "9113697442"
+        },
+        {
+          "name": "Sudeep R.",
+          "phone": "9110400872"
+        },
+        {
+          "name": "Maligouda B.",
+          "phone": "6360794766"
+        },
+        {
+          "name": "Vaishali S.",
+          "phone": "9380728929"
+        }
+      ],
+
+      "teams": [
+        {
+          "team_name": "Code Clashers",
+          "members": ["Amit", "Rahul", "Sneha"]
+        },
+        {
+          "team_name": "Brand Builders",
+          "members": ["Kiran", "Neha", "Rohit", "Anjali"]
+        }
+      ]
+    },
+
+    {
+      "name":"Corporate Launchpad",
+      "about": "Mock Interviews,group discussions,aptitude tests,logical reasoning and technical skills,Resume building and interview readiness,Communication and confidence level,Group discussion and HR round performance,Time management during assessments,Professional behavior and etiquette,Industry awareness and career planning,Overall employability skills",
+      "logo": "images/inter.png",
+
+      "organizers": [
+        {
+          "name": "Vijayalakshmi R.",
+          "phone": "9035055715"
+        },
+        {
+          "name": "Shradha Z.",
+          "phone": "9019211048"
+        },
+        {
+          "name": "Bhagyashree W.",
+          "phone": "7676842319"
+        },
+        {
+          "name": "Laxmi M.",
+          "phone": "8310786486"
+        }
+       
+      ],
+
+      "teams": [
+        {
+          "team_name": "Food Masters",
+          "members": ["Ravi", "Poonam", "Aarti"]
+        },
+        {
+          "team_name": "Taste Makers",
+          "members": ["Kiran", "Sneha", "Manoj"]
+        }
+      ]
+    },
+
+
+    {
+      "name": "Board Room Battles",
+      "about":"Mock interview scenarios,Content knowledge and clarity of thought,Logical argument and reasoning,stick to the concept,Communication and language fluency,Confidence and stage presence,Rebuttal and counter-argument skills,Time management,Respect for opposing views",
+      "logo": "images/deb.png",
+
+      "organizers": [
+         {
+          "name": "Jayashree",
+          "phone": "7483465155"
+        },
+        {
+          "name": "Ranjita W.",
+          "phone": "8861862986"
+        },
+        {
+          "name": "Varsha H.",
+          "phone": "7795152223"
+        },
+        {
+          "name": "Sneha p.",
+          "phone": "8073160477"
+        },
+        {
+          "name": "Naveen C.",
+          "phone": "8317334479"
+        },
+        {
+          "name": "Devaraj",
+          "phone": "8431374356"
+        },
+        {
+          "name": "Laxmikant",
+          "phone": "8088247810"
+        },
+        {
+          "name": "Akash M.",
+          "phone": "9620242805"
+        }
+       
+      ],
+
+      "teams": [
+        {
+          "team_name": "Brain Boosters",
+          "members": ["Akash", "Sneha", "Nitin"]
+        },
+        {
+          "team_name": "Smart Minds",
+          "members": ["Pooja", "Rahul", "Aarti"]
+        }
+      ]
+    },
+
+    {
+      "name": "Market Minds",
+      "about": "quiz buzzers,scoreboard,General knowledge and subject awareness,Speed and accuracy of answers,Logical and analytical thinking,Presence of mind,Team coordination (if team-based),Time management under pressure,Fair play and discipline",
+      "logo": "images/quiz.png",
+
+      "organizers": [
+         {
+          "name": "Sanjana Mali",
+          "phone": "7338301848"
+        },
+        {
+          "name": "Bhoomika Kolkur",
+          "phone": "7892082380"
+        },
+        {
+          "name": "Gouri Kulkarni",
+          "phone": "7899564664"
+        },
+        {
+          "name": "Nandita C.",
+          "phone": "9019345494"
+        },
+        {
+          "name": "Vikas U.",
+          "phone": "7019276832"
+        },
+        {
+          "name": "Rajendra D.",
+          "phone": "7619647039"
+        },
+        {
+          "name": "Siddu Madyal",
+          "phone": "8073391577"
+        }
+        
+      ],
+
+      "teams": [
+        {
+          "team_name": "Market Masters",
+          "members": ["Vinay", "Rohit", "Neha", "Poonam"]
+        },
+        {
+          "team_name": "Sales Wizards",
+          "members": ["Amit", "Kiran", "Sonal", "Manish"]
+        }
+      ]
+    },
+
+    {
+      "name": "Food Fiesta",
+      "about": "culinary skills,food presentation,The food fest event highlights creativity in food preparation, taste and quality of dishes, hygiene and presentation, innovation in recipes, teamwork and coordination, time management, customer interaction, cultural variety, and overall appeal of the stall.",
+      "logo": "images/food.png",
+
+      "organizers": [
+         {
+          "name": "Shreya S.H.",
+          "phone": "6362636193"
+        },
+        {
+          "name": "Pragati P.",
+          "phone": "8310450690"
+        },
+        {
+          "name": "Asha K.",
+          "phone": "9980980128"
+        },
+        {
+          "name": "Rekha S.",
+          "phone": "9480960559"
+        },
+        {
+          "name": "Swati H.",
+          "phone": "8329256532"
+        },
+        {
+          "name": "Shreya Hatti",
+          "phone": "8217482035"
+        },
+        {
+          "name": "Jyoti",
+          "phone": "9972357494"
+        },
+        {
+          "name": "Nandita ",
+          "phone": "9739323202"
+        },
+        {
+          "name": "Ranjitha H.",
+          "phone": "9380226532"
+        },
+        {
+          "name": "Suchitra",
+          "phone": "8971070244"
+        }
+    
+      ],
+
+      "teams": [
+        {
+          "team_name": "Money Minds",
+          "members": ["Ravi", "Neha", "Suresh"]
+        },
+        {
+          "team_name": "Wealth Creators",
+          "members": ["Anil", "Pooja", "Nikhil"]
+        }
+        
+      ]
+    },
+
+    {
+      "name": "Visionary Vault",
+      "about": "Individual Presentation,The presentation event focuses on clarity of content, logical flow of ideas, confidence in delivery, effective communication skills, proper use of visual aids, subject knowledge, time management, ability to answer questions, and overall impact on the audience.",
+      "logo": "images/present.png",
+
+      "organizers": [
+        {
+          "name": "Sakshi P.",
+          "phone": "9008771182"
+        },
+        {
+          "name": "Pooja A.",
+          "phone": "7338438226"
+        },
+        {
+          "name": " Shruti A.",
+          "phone": "8147553855"
+        },
+        {
+          "name": "Aishwarya J.",
+          "phone": "9353732196"
+        },
+        {
+          "name": "Jay",
+          "phone": "9880010928"
+        },
+        {
+          "name": "Shivanand M.",
+          "phone": "9970099412"
+        },
+        {
+          "name": "Pavan H.",
+          "phone": "7022539443"
+        },
+        {
+          "name": "Trupti",
+          "phone": "6360154697"
+        }
+        
+      ],
+
+      "teams": [
+        {
+          "team_name": "Voice of Logic",
+          "members": ["Rohit", "Sneha", "Amit"]
+        },
+        {
+          "team_name": "Think Tank",
+          "members": ["Neha", "Kiran", "Pooja"]
+        }
+      ]
+    },
+
+    {
+      "name": "TechPreneurs",
+      "about": "Website creation challenge,coding challenge,Use of HTML, CSS, JavaScript,frameworks,Code quality, logic, and efficiency,Problem-solving and debugging skills,Creativity and innovation in web design,Practical implementation of concepts",
+      "logo": "images/web.png",
+
+      "organizers": [
+        {
+          "name": "Suhana H.",
+          "phone": "9923559611"
+        },
+        {
+          "name": "Aishwarya U.",
+          "phone": "8762169418"
+        },
+        {
+          "name": "Aishwarya B.",
+          "phone": "8088311741"
+        },
+        {
+          "name": "Bhoomika B.",
+          "phone": "9353805259"
+        },
+        {
+          "name": "Apoorva M.",
+          "phone": "8951674579"
+        },
+        {
+          "name": "Nanda navi",
+          "phone": "9380594454"
+        },
+        {
+          "name": "Prashant N.",
+          "phone": "8951919133"
+        },
+        {
+          "name": "Vikas H.",
+          "phone": "9380678957"
+        },
+        {
+          "name": "Mahantesh B.",
+          "phone": "9380351092"
+        }
+        
+      ],
+
+      "teams": [
+        {
+          "team_name": "Pixel Artists",
+          "members": ["Arjun", "Neha", "Sahil"]
+        },
+        {
+          "team_name": "Lens Legends",
+          "members": ["Pooja", "Rohan", "Nikita"]
+        }
+      ]
+    },
+
+    {
+      "name": "Corporate Tunes",
+      "about": "Solo Singing Competition,This event focuses on voice quality, pitch and tonal control, rhythm and timing, song selection, clarity of lyrics, expression and emotion, stage presence, confidence, and overall performance impact.", 
+      "logo": "images/sing.png",
+
+      "organizers": [
+        {
+          "name": "Aishwarya P.",
+          "phone": "9353470480"
+        },
+        {
+          "name": "Varshini P.",
+          "phone": "7204409311"
+        },
+        {
+          "name": "Deepa P.",
+          "phone": "8792011244"
+        },
+        {
+          "name": "Amoghasidda U.",
+          "phone": "7975905625"
+        },
+        {
+          "name": "Vaishali M.",
+          "phone": "9731355233"
+        },
+        {
+          "name": "Tanuja B.",
+          "phone": "8431833364"
+        },
+        {
+          "name": "Pooja G.",
+          "phone": "7387022304"
+        }
+       
+      ],
+
+      "teams": [
+        {
+          "team_name": "Food Masters",
+          "members": ["Ravi", "Poonam", "Aarti"]
+        },
+        {
+          "team_name": "Taste Makers",
+          "members": ["Kiran", "Sneha", "Manoj"]
+        }
+      ]
+    },
+
+    {
+      "name": "Corporate Beats",
+      "about": "Dance Performance snapshots,This event evaluates rhythm and coordination, choreography and creativity, expression and body movements, energy and synchronization, costume and presentation, stage utilization, confidence, and overall visual appeal.",
+      "logo": "images/dance.png",
+
+      "organizers": [
+       {
+          "name": "Prachi",
+          "phone": "7019268393"
+        },
+        {
+          "name": "Vedashree",
+          "phone": "6363820028"
+        },
+        {
+          "name": "Chetan",
+          "phone": "6362865136"
+        },
+        {
+          "name": "Goutam S.",
+          "phone": "6362727946"
+        },
+        {
+          "name": "Samarth D.",
+          "phone": "6360720980"
+        },
+        {
+          "name": "Santosh H.",
+          "phone": "9611593622"
+        },
+        {
+          "name": "Prajwal H.",
+          "phone": "9972597723"
+        }
+      ],
+
+      "teams": [
+        {
+          "team_name": "Melody Stars",
+          "members": ["Anjali", "Rohan", "Pooja"]
+        },
+        {
+          "team_name": "Rhythm Crew",
+          "members": ["Amit", "Sneha", "Nikhil"]
+        }
+      ]
+    },
+
+    {
+      "name": "Adpreneurs",
+      "about": "Marketing concepts to real-world scenarios,This event emphasizes creativity and originality, clarity of the message, relevance to the product or theme, acting and dialogue delivery, team coordination, time management, audience engagement, humor or social impact, and overall effectiveness of the advertisement.",
+      "logo": "images/ads.png",
+
+      "organizers": [
+        {
+          "name": "Abhishek H.",
+          "phone": "8105480911"
+        },
+        {
+          "name": "Bhimashankar",
+          "phone": "8217625783"
+        },
+        {
+          "name": "Rohit C.",
+          "phone": "9108136575"
+        },
+        {
+          "name": "Akash B.",
+          "phone": "9110852266"
+        },
+        {
+          "name": "Arun M.",
+          "phone": "7483924854"
+        },
+        {
+          "name": "Amit Nayak",
+          "phone": "9900161007"
+        },
+        {
+          "name": "Vishwanath B.",
+          "phone": "9845676315"
+        },
+        {
+          "name": "Mahesh J.",
+          "phone": "7483819642"
+        }
+      ],
+
+      "teams": [
+        {
+          "team_name": "Melody Stars",
+          "members": ["Anjali", "Rohan", "Pooja"]
+        },
+        {
+          "team_name": "Rhythm Crew",
+          "members": ["Amit", "Sneha", "Nikhil"]
+        }
+      ]
+    },
+
+    {
+      "name": "Elite Executive Walk",
+      "about": "Personal styling,stage presence,creativity,This event highlights theme interpretation, costume design and creativity, styling and grooming, confidence and ramp walk, expressions and attitude, coordination with music, stage presence, visual impact, and overall presentation.",
+      "logo": "images/fashion.png",
+
+      "organizers": [
+        {
+          "name": "Sneha J.",
+          "phone": "7975517830"
+        },
+        {
+          "name": "Shravani K.",
+          "phone": "9916797776"
+        },
+        {
+          "name": "Soubhagya",
+          "phone": "7975912767"
+        },
+        {
+          "name": "Sushmita S.",
+          "phone": "9322719779"
+        }
+      ],
+
+      "teams": [
+        {
+          "team_name": "Melody Stars",
+          "members": ["Anjali", "Rohan", "Pooja"]
+        },
+        {
+          "team_name": "Rhythm Crew",
+          "members": ["Amit", "Sneha", "Nikhil"]
+        }
+      ]
+    },
+
+    {
+      "name": "Brand Lens",
+      "about": "Theme-based photogaphy contest,This event focuses on creativity and originality, composition and framing, lighting and clarity, relevance to the theme, technical skills, visual storytelling, attention to detail, editing quality if applicable, and overall photographic impact.",
+      "logo": "images/phg.png",
+
+      "organizers": [
+        {
+          "name": "Karti H.",
+          "phone": "6361467522"
+        },
+        {
+          "name": "Pradeep",
+          "phone": "9845525722"
+        },
+        {
+          "name": "Mallappa",
+          "phone": "9481650674"
+        },
+        {
+          "name": "Yaseen",
+          "phone": "9481571996"
+        }
+      ],
+
+      "teams": [
+        {
+          "team_name": "Melody Stars",
+          "members": ["Anjali", "Rohan", "Pooja"]
+        },
+        {
+          "team_name": "Rhythm Crew",
+          "members": ["Amit", "Sneha", "Nikhil"]
+        }
+      ]
+    },
+    {
+      "name": "Craft Preneurs",
+      "about": "This event evaluates creativity and imagination, originality of the idea, use of materials, neatness and finishing, color combination and design, relevance to the theme, time management, presentation of the artwork, and overall aesthetic appealThis event evaluates creativity and imagination, originality of the idea, use of materials, neatness and finishing, color combination and design, relevance to the theme, time management, presentation of the artwork, and overall aesthetic appeal", 
+      "logo": "images/sing.png",
+
+      "organizers": [
+        {
+          "name": "Priyanka B.",
+          "phone": "9113672132"
+        },
+        {
+          "name": "Megha B.",
+          "phone": "9110877790"
+        },
+        {
+          "name": "Daneshwari G.",
+          "phone": "7795942600"
+        },
+        {
+          "name": "Savitri D.",
+          "phone": "7676327249"
+        },
+        {
+          "name": "Gouri B.",
+          "phone": "9071847732"
+        }
+       
+      ],
+
+      "teams": [
+        {
+          "team_name": "Food Masters",
+          "members": ["Ravi", "Poonam", "Aarti"]
+        },
+        {
+          "team_name": "Taste Makers",
+          "members": ["Kiran", "Sneha", "Manoj"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+
+body{
+    background: linear-gradient(135deg,#2193b0,#6dd5ed);
+}
+
+/* Back Button */
+.back-btn{
+    display:inline-block;
+    margin:20px;
+    padding:8px 18px;
+    border-radius:20px;
+    background:#2193b0;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.back-btn:hover{
+    background:#176c8a;
+}
+
+/* Main Card */
+.event-detail-card{
+    background:white;
+    max-width:700px;
+    margin:40px auto;
+    padding:30px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* Image */
+.event-image{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:15px;
+    border:2px solid #2193b0;
+    margin-bottom:15px;
+}
+
+/* Title */
+.event-title{
+    font-size:28px;
+    font-weight:bold;
+    color:#2193b0;
+}
+
+/* About */
+.event-about{
+    font-size:16px;
+    color:#444;
+    margin:15px 0;
+}
+
+/* Section */
+.section-box{
+    background:#f8f9fa;
+    border-radius:15px;
+    padding:15px;
+    margin-top:20px;
+    text-align:left;
+}
+
+/* Organizer Card */
+.org-card{
+    background:white;
+    padding:8px 12px;
+    margin:6px 0;
+    border-radius:10px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Team Card */
+.team-card{
+    background:white;
+    padding:10px;
+    margin:8px 0;
+    border-radius:10px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+</style>
+
+
+<!-- Back -->
+<a href="{{ url_for('events') }}" class="back-btn">
+    ⬅ Back to Events
+</a>
+
+
+<!-- Event Details -->
+
+<div class="event-detail-card">
+
+    <!-- Image -->
+    <img 
+        src="{{ url_for('static', filename=event.logo) }}"
+        class="event-image"
+        alt="Event Image"
+    >
+
+    <!-- Title -->
+    <div class="event-title">
+        {{ event.name }}
+    </div>
+
+    <!-- About -->
+    <div class="event-about">
+        {{ event.about }}
+    </div>
+
+
+    <!-- Organizers -->
+    <div class="section-box">
+
+        <h4>📞 Organizers</h4>
+
+        {% if event.organizers %}
+
+            {% for org in event.organizers.split(",") %}
+
+                <div class="org-card">
+                    👤 {{ org.strip() }}
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p>No organizers added.</p>
+
+        {% endif %}
+
+    </div>
+
+
+    <!-- Teams -->
+    <div class="section-box">
+
+        <h4>👥 Registered Teams</h4>
+
+        {% if event.teams and event.teams|length > 0 %}
+
+            {% for team in event.teams %}
+
+                <div class="team-card">
+
+                    <b>🏷 Team:</b> {{ team.team_name }} <br>
+                    <b>👤 Members:</b> {{ team.members }}
+
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p>No teams registered yet.</p>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}

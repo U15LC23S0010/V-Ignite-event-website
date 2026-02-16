@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Admin Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+
+  <span class="navbar-brand fw-bold">
+    Admin Panel
+  </span>
+
+  <div class="ms-auto">
+
+    <a href="/admin/dashboard" class="btn btn-primary me-2">
+      📊 Dashboard
+    </a>
+
+    <a href="/logout" class="btn btn-danger">
+      🚪 Logout
+    </a>
+
+  </div>
+
+</nav>
+
+
+<div class="container mt-4">
+
+<!-- Add Event -->
+<form method="post" class="card p-3 mb-4 shadow">
+
+    <h5 class="mb-3">➕ Add New Event</h5>
+
+    <input name="name"
+           placeholder="Event Name"
+           class="form-control mb-2"
+           required>
+
+    <textarea name="about"
+              placeholder="About event"
+              class="form-control mb-2"
+              required></textarea>
+
+    <input name="logo"
+           placeholder="images/event.png"
+           class="form-control mb-2">
+
+    <input name="organizers"
+           placeholder="Org1, Org2"
+           class="form-control mb-2"
+           required>
+
+    <button class="btn btn-success w-100">
+        Add Event
+    </button>
+
+</form>
+
+
+<!-- Event List -->
+<h5 class="mb-3">📋 All Events</h5>
+
+<table class="table table-bordered table-striped shadow">
+
+<thead class="table-dark">
+<tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Actions</th>
+</tr>
+</thead>
+
+<tbody>
+
+{% for event in events %}
+
+<tr>
+
+    <td>{{ loop.index }}</td>
+
+    <td>{{ event.name }}</td>
+
+    <td>
+
+        <!-- Edit -->
+        <a href="/admin/edit/{{ event.id }}"
+           class="btn btn-sm btn-warning me-1">
+           ✏️ Edit
+        </a>
+
+        <!-- Delete -->
+        <a href="/admin/delete/{{ event.id }}"
+           class="btn btn-sm btn-danger"
+           onclick="return confirm('Delete this event?')">
+           🗑 Delete
+        </a>
+
+    </td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+</table>
+
+</div>
+
+{% endblock %}
