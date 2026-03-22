@@ -295,6 +295,35 @@ def logout():
 
     return redirect(url_for("home"))
 
+    # ================= AI CHATBOT (ADD ONLY) =================
+@app.route("/chatbot", methods=["POST"])
+def chatbot():
+
+    data = request.get_json()
+
+    if not data:
+        return {"reply": "Invalid request"}
+
+    user_msg = data.get("message", "").lower()
+
+    # Smart replies
+    if "event" in user_msg:
+        reply = "You can view all events on the Events page."
+    elif "register" in user_msg:
+        reply = "Click on an event and press the Register button."
+    elif "login" in user_msg:
+        reply = "Admins can login from the admin panel."
+    elif "team" in user_msg:
+        reply = "Teams are created during event registration."
+    elif "organizer" in user_msg:
+        reply = "Organizer details are shown inside each event page."
+    elif "help" in user_msg:
+        reply = "You can ask me about events, registration, teams, or login."
+    else:
+        reply = "Hi 👋 I'm V-IGNITE Assistant! Ask me about events, registration, or teams."
+
+    return {"reply": reply}
+
 # ---------------- RUN ----------------
 
 if __name__ == "__main__":
