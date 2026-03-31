@@ -180,6 +180,34 @@ body{
     }
 }
 
+/* Pagination Overrides */
+.pagination .page-link {
+    color: #ff416c;
+    border: 1px solid #ff416c;
+    background: transparent;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 0 4px;
+}
+.pagination .page-item.active .page-link {
+    background: linear-gradient(45deg, #ff416c, #f9d423);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 10px rgba(255, 65, 108, 0.4);
+}
+.pagination .page-item.disabled .page-link {
+    color: #888;
+    border-color: #888;
+}
+
+body.dark-mode .pagination .page-link {
+    color: #f9d423;
+    border-color: #f9d423;
+}
+body.dark-mode .pagination .page-item.active .page-link {
+    color: #100517;
+}
+
 </style>
 
 
@@ -303,43 +331,113 @@ body{
 
 </div>
 
+<!-- Pagination Controls -->
+<div id="paginationControls" class="mt-4 mb-3 d-flex justify-content-center"></div>
+
 </div>
 
 
-<!-- Search Script -->
+<!-- Search and Pagination Script -->
 <script>
 
-// Trigger animation on load
+const ITEMS_PER_PAGE = 6;
+let currentPage = 1;
+let visibleBoxes = [];
+
 window.addEventListener('DOMContentLoaded', () => {
-    let boxes = document.getElementsByClassName("event-box");
-    for(let i=0; i<boxes.length; i++){
-        boxes[i].classList.add("show-anim");
+    let allBoxes = document.getElementsByClassName("event-box");
+    // Initially all boxes are considered visible (in DOM order)
+    for(let i = 0; i < allBoxes.length; i++){
+        visibleBoxes.push(allBoxes[i]);
     }
+    
+    // trigger setup
+    updatePagination();
 });
 
-function searchEvents(){
-
+function searchEvents() {
     let input = document.getElementById("searchInput").value.toLowerCase();
-    let boxes = document.getElementsByClassName("event-box");
-
-    for(let i=0;i<boxes.length;i++){
-
-        let title = boxes[i].getElementsByClassName("event-title")[0];
-
+    let allBoxes = document.getElementsByClassName("event-box");
+    
+    visibleBoxes = []; // reset visible boxes array
+    
+    for(let i=0; i < allBoxes.length; i++) {
+        let title = allBoxes[i].getElementsByClassName("event-title")[0];
+        
+        // Hide completely during search calculation
+        allBoxes[i].style.display = "none";
+        allBoxes[i].classList.remove("show-anim");
+        
         if(title.innerText.toLowerCase().includes(input)){
-            if(boxes[i].style.display === "none" || input === ""){
-                boxes[i].style.display = "";
-                boxes[i].classList.remove("show-anim");
-                void boxes[i].offsetWidth; // trigger reflow
-                boxes[i].classList.add("show-anim");
-            } else {
-                boxes[i].style.display = "";
-            }
+            visibleBoxes.push(allBoxes[i]);
         }
-        else{
-            boxes[i].style.display = "none";
-            boxes[i].classList.remove("show-anim");
+    }
+    
+    currentPage = 1; // reset to first page
+    updatePagination();
+}
+
+function updatePagination() {
+    let totalPages = Math.ceil(visibleBoxes.length / ITEMS_PER_PAGE);
+    let pagContainer = document.getElementById("paginationControls");
+    pagContainer.innerHTML = ""; // Clear existing buttons
+    
+    if(totalPages > 1) {
+        let ul = document.createElement("ul");
+        ul.className = "pagination";
+        
+        // Prev
+        let prevLi = document.createElement("li");
+        prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
+        prevLi.innerHTML = `<button class="page-link" onclick="goToPage(${currentPage - 1})">Prev</button>`;
+        ul.appendChild(prevLi);
+        
+        // Dynamic Page Numbers
+        for(let p = 1; p <= totalPages; p++) {
+            let li = document.createElement("li");
+            li.className = `page-item ${currentPage === p ? 'active' : ''}`;
+            li.innerHTML = `<button class="page-link" onclick="goToPage(${p})">${p}</button>`;
+            ul.appendChild(li);
         }
+        
+        // Next
+        let nextLi = document.createElement("li");
+        nextLi.className = `page-item ${currentPage === totalPages ? 'disabled' : ''}`;
+        nextLi.innerHTML = `<button class="page-link" onclick="goToPage(${currentPage + 1})">Next</button>`;
+        ul.appendChild(nextLi);
+        
+        pagContainer.appendChild(ul);
+    }
+    
+    showCurrentPage();
+}
+
+function goToPage(page) {
+    let totalPages = Math.ceil(visibleBoxes.length / ITEMS_PER_PAGE);
+    if(page < 1 || page > totalPages) return;
+    
+    currentPage = page;
+    updatePagination();
+}
+
+function showCurrentPage() {
+    // Hide all items first
+    let allBoxes = document.getElementsByClassName("event-box");
+    for(let i=0; i<allBoxes.length; i++){
+        allBoxes[i].style.display = "none";
+        allBoxes[i].classList.remove("show-anim");
+    }
+    
+    // Calculate start and end indices
+    let start = (currentPage - 1) * ITEMS_PER_PAGE;
+    let end = start + ITEMS_PER_PAGE;
+    
+    // Show only the boxes that belong to the current page
+    for(let i = start; i < end && i < visibleBoxes.length; i++) {
+        visibleBoxes[i].style.display = "";
+        // Force browser to recalculate layout to restart animation
+        void visibleBoxes[i].offsetWidth; 
+        visibleBoxes[i].classList.add("show-anim");
     }
 }
 

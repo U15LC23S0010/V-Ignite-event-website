@@ -116,10 +116,46 @@
     body.dark-mode h4 {
         color: #f9d423 !important;
     }
+    
+    /* Loading Round Spinner */
+    .loader-container {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: linear-gradient(-45deg, #100517, #0b0b0b, #170404, #12030f);
+        z-index: 99999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.5s ease;
+    }
+    
+    .spinner {
+        width: 60px;
+        height: 60px;
+        border: 6px solid #b81414;
+        border-top: 6px solid #f9d423;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    body.loaded .loader-container {
+        opacity: 0;
+        pointer-events: none;
+    }
     </style>
 </head>
 
 <body>
+
+<!-- Global Loader -->
+<div id="global-loader" class="loader-container">
+    <div class="spinner"></div>
+</div>
 
 <!-- Navbar removed as per request -->
 <!-- ================= CONTENT ================= -->
