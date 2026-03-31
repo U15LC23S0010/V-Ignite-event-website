@@ -5,8 +5,44 @@
 <style>
 
 body{
-    background: linear-gradient(135deg,#2193b0,#6dd5ed);
+    background: linear-gradient(-45deg, #59257a, #b81414, #b37c2e, #a81c4e);
+    background-size: 400% 400%;
+    animation: festiveBG 15s ease infinite;
+    font-family: 'Poppins', sans-serif;
     min-height:100vh;
+}
+
+@keyframes festiveBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Welcome Animation */
+.welcome-container {
+    text-align: center;
+    margin-top: 20px;
+    animation: slideDownFade 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.welcome-text {
+    font-size: 36px;
+    font-weight: 900;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    margin: 0;
+}
+
+.welcome-subtext {
+    font-size: 16px;
+    color: #fce4da;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+@keyframes slideDownFade {
+    0% { transform: translateY(-40px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
 }
 
 /* Buttons */
@@ -24,15 +60,21 @@ body{
 }
 
 .search-box input{
-    width:300px;
+    width:90%;
+    max-width:400px;
     padding:12px 20px;
     border:none;
     border-radius:25px;
     outline:none;
-    background: linear-gradient(45deg,#2193b0,#6dd5ed);
-    color:white;
+    background: white;
+    color: #ff416c;
     font-weight:bold;
     text-align:center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.search-box input::placeholder {
+    color: #ff9a9e;
 }
 
 /* Card Link */
@@ -57,18 +99,23 @@ body{
     transform:translateY(-10px) scale(1.05);
 }
 
-/* Icon */
+/* Icon Container */
 .event-icon{
     font-size:50px;
     margin-bottom:15px;
-    color:#2193b0;
+    color: #f9d423;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
 /* Title */
 .event-title{
     font-size:22px;
-    font-weight:bold;
+    font-weight:900;
     margin-bottom:10px;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* Info */
@@ -76,6 +123,61 @@ body{
     color:gray;
     font-size:14px;
     margin:5px 0;
+}
+
+/* Festive Button */
+.btn-festive-sm {
+    background: linear-gradient(45deg, #ff416c, #f9d423);
+    color: white !important;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 6px 16px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(255, 65, 108, 0.4);
+}
+.event-card:hover .btn-festive-sm {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 65, 108, 0.6);
+}
+
+/* Event Search Animation */
+@keyframes welcomeFadeUp {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.event-box.show-anim {
+    animation: welcomeFadeUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .search-box input {
+        width: 90%;
+        max-width: 350px;
+    }
+    .top-buttons {
+        margin: 15px;
+        justify-content: space-between;
+    }
+    .event-icon {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+    .event-title {
+        font-size: 20px;
+    }
+    .event-card {
+        padding: 20px 15px;
+    }
+    .welcome-text {
+        font-size: 26px;
+    }
+    .welcome-subtext {
+        font-size: 14px;
+    }
 }
 
 </style>
@@ -94,6 +196,11 @@ body{
 
 </div>
 
+<!-- Welcome Section -->
+<div class="welcome-container">
+    <h1 class="welcome-text">✨ Welcome to V-Ignite! ✨</h1>
+    <p class="welcome-subtext">Find and explore your favorite events</p>
+</div>
 
 <!-- Search -->
 <div class="search-box">
@@ -124,38 +231,40 @@ body{
 <!-- Icon -->
 <div class="event-icon">
 
-{% if "Best Manager" in event.name %}
+{% if event.name == "Board Room Boss" %}
 🏆
-{% elif "Marketing" in event.name %}
+{% elif event.name == "Brand Blitz" %}
 📊
-{% elif "Finance" in event.name %}
+{% elif event.name == "Wall Street Warriors" %}
 💹
-{% elif "Mini Project" in event.name %}
-🛠️
-{% elif "Placement" in event.name %}
-🎯
-{% elif "Debate" in event.name %}
-🎙️
-{% elif "Quiz" in event.name %}
-🧠
-{% elif "Food Fest" in event.name %}
-🍴
-{% elif "Presentation" in event.name %}
-📽️
-{% elif "Web Development" in event.name %}
+{% elif event.name == "Innovation Pitch" %}
 💻
-{% elif "Singing" in event.name %}
-🎤
-{% elif "Dance" in event.name %}
-💃
-{% elif "Ad Mad" in event.name %}
-📣
-{% elif "Fashion" in event.name %}
-👗
-{% elif "Photography" in event.name %}
+{% elif event.name == "TechPreneurs" %}
+🌐
+{% elif event.name == "Brand Lens" %}
 📷
+{% elif event.name == "Food Fiesta" %}
+🍴
+{% elif event.name == "Craft Preneurs" %}
+🎨
+{% elif event.name == "Corporate Launchpad" %}
+🎯
+{% elif event.name == "Elite Executive Walk" %}
+👗
+{% elif event.name == "Corporate Tunes" %}
+🎤
+{% elif event.name == "Corporate Beats" %}
+💃
+{% elif event.name == "Adpreneurs" %}
+📣
+{% elif event.name == "Visionary Vault" %}
+📽️
+{% elif event.name == "Board Room Battles" %}
+🎙️
+{% elif event.name == "Market Minds" %}
+🧠
 {% else %}
-🚀
+⭐
 {% endif %}
 
 </div>
@@ -178,9 +287,9 @@ body{
 
 <!-- View Details Button -->
 <div style="margin-top:15px;">
-    <button class="btn btn-primary btn-sm">
+    <span class="btn btn-festive-sm" style="display:inline-block;">
         View Details
-    </button>
+    </span>
 </div>
 
 </div>
@@ -200,10 +309,17 @@ body{
 <!-- Search Script -->
 <script>
 
+// Trigger animation on load
+window.addEventListener('DOMContentLoaded', () => {
+    let boxes = document.getElementsByClassName("event-box");
+    for(let i=0; i<boxes.length; i++){
+        boxes[i].classList.add("show-anim");
+    }
+});
+
 function searchEvents(){
 
     let input = document.getElementById("searchInput").value.toLowerCase();
-
     let boxes = document.getElementsByClassName("event-box");
 
     for(let i=0;i<boxes.length;i++){
@@ -211,10 +327,18 @@ function searchEvents(){
         let title = boxes[i].getElementsByClassName("event-title")[0];
 
         if(title.innerText.toLowerCase().includes(input)){
-            boxes[i].style.display = "";
+            if(boxes[i].style.display === "none" || input === ""){
+                boxes[i].style.display = "";
+                boxes[i].classList.remove("show-anim");
+                void boxes[i].offsetWidth; // trigger reflow
+                boxes[i].classList.add("show-anim");
+            } else {
+                boxes[i].style.display = "";
+            }
         }
         else{
             boxes[i].style.display = "none";
+            boxes[i].classList.remove("show-anim");
         }
     }
 }

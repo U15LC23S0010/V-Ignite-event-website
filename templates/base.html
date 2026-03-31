@@ -17,30 +17,111 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <style>
+    /* Dark Mode Toggle Button */
+    .theme-toggle-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: white;
+        color: #59257a;
+        border: 2px solid #f9d423;
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        font-size: 26px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        cursor: pointer;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+    }
+    
+    .theme-toggle-btn:hover {
+        transform: scale(1.1) rotate(10deg);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    }
+    
+    /* Dark Mode Global Overrides */
+    body.dark-mode {
+        background: linear-gradient(-45deg, #100517, #0b0b0b, #170404, #12030f) !important;
+        background-size: 400% 400%;
+        color: #f0f0f0 !important;
+    }
+    
+    body.dark-mode main, body.dark-mode footer h6, body.dark-mode footer p {
+        color: #f0f0f0 !important;
+    }
+    
+    body.dark-mode .event-card,
+    body.dark-mode .event-detail-card,
+    body.dark-mode .login-container,
+    body.dark-mode .home-header,
+    body.dark-mode .section-box,
+    body.dark-mode .org-card,
+    body.dark-mode .team-card {
+        background: #1c1c1c !important;
+        color: #e0e0e0 !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.7) !important;
+    }
+    
+    body.dark-mode .event-title,
+    body.dark-mode .login-title,
+    body.dark-mode .college-name {
+        background: linear-gradient(45deg, #ff758c, #ff7eb3) !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+    }
+    
+    body.dark-mode .event-about {
+        color: #bbbbbb !important;
+    }
+    
+    body.dark-mode .search-box input {
+        background: #2a2a2a !important;
+        color: #ff9a9e !important;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
+        border: 1px solid #444 !important;
+    }
+    
+    body.dark-mode .search-box input::placeholder {
+        color: #777777 !important;
+    }
+    
+    body.dark-mode .footer {
+        background: #111111 !important;
+        color: #cccccc !important;
+    }
+    
+    body.dark-mode .back-btn {
+        background: #2d2d2d !important;
+        color: #ff758c !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
+    }
+    
+    body.dark-mode .theme-toggle-btn {
+        background: #222222;
+        color: #f9d423;
+        border-color: #ff416c;
+    }
+    
+    body.dark-mode .event-info {
+        color: #a0a0a0 !important;
+    }
+    
+    body.dark-mode h4 {
+        color: #f9d423 !important;
+    }
+    </style>
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-
-        <a class="navbar-brand fw-semibold" href="/">V-IGNITE</a>
-
-        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navMenu">
-            <div class="ms-auto d-flex gap-2 mt-3 mt-lg-0">
-                <a href="/" class="btn btn-outline-light btn-sm">Home</a>
-                <a href="/events" class="btn btn-outline-light btn-sm">Events</a>
-            </div>
-        </div>
-
-    </div>
-</nav>
-
+<!-- Navbar removed as per request -->
 <!-- ================= CONTENT ================= -->
 <main class="container py-4">
     {% block content %}{% endblock %}
@@ -68,110 +149,50 @@
     </div>
 </footer>
 
-<!-- ================= CHATBOT ================= -->
-
-<!-- Floating Button -->
-<div id="chatbot-btn" onclick="openChat()">💬</div>
-
-<!-- Fullscreen Chat -->
-<div id="chatbot-box">
-
-    <!-- Header -->
-    <div id="chat-header">
-        <span>🤖 V-IGNITE Assistant</span>
-        <span id="chat-close" onclick="closeChat()">✖</span>
-    </div>
-
-    <!-- Messages -->
-    <div id="chat-messages"></div>
-
-    <!-- Input -->
-    <div class="chat-input">
-        <input type="text" id="userInput" placeholder="Type your message..."
-               onkeypress="if(event.key==='Enter') sendMessage()">
-        <button onclick="sendMessage()">➤</button>
-    </div>
-
-</div>
-
+<!-- Chatbot removed as per request -->
 <!-- ================= SCRIPTS ================= -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-
 /* ================= PAGE LOAD ================= */
 window.onload = () => {
     document.body.classList.add("loaded");
 };
 
-/* ================= CHAT OPEN ================= */
-function openChat() {
-    document.getElementById("chatbot-box").style.display = "flex";
+/* ================= DARK MODE SCRIPT ================= */
+const themeToggle = document.getElementById("themeToggle");
+
+function setDarkMode(isDark) {
+    if(isDark) {
+        document.body.classList.add("dark-mode");
+        if(themeToggle) themeToggle.innerText = "☀️";
+        localStorage.setItem("theme", "dark");
+    } else {
+        document.body.classList.remove("dark-mode");
+        if(themeToggle) themeToggle.innerText = "🌙";
+        localStorage.setItem("theme", "light");
+    }
 }
 
-/* ================= CHAT CLOSE ================= */
-function closeChat() {
-    document.getElementById("chatbot-box").style.display = "none";
+function toggleDarkMode() {
+    const isDark = document.body.classList.contains("dark-mode");
+    setDarkMode(!isDark);
 }
 
-/* ================= SEND MESSAGE ================= */
-function sendMessage() {
-
-    let input = document.getElementById("userInput");
-    let message = input.value.trim();
-
-    if (!message) return;
-
-    let chat = document.getElementById("chat-messages");
-
-    // USER MESSAGE
-    let userDiv = document.createElement("div");
-    userDiv.className = "user-msg";
-    userDiv.innerText = message;
-    chat.appendChild(userDiv);
-
-    // AUTO SCROLL
-    chat.scrollTop = chat.scrollHeight;
-
-    // TYPING EFFECT
-    let typing = document.createElement("div");
-    typing.className = "bot-msg";
-    typing.innerText = "Typing...";
-    chat.appendChild(typing);
-
-    chat.scrollTop = chat.scrollHeight;
-
-    // API CALL
-    fetch("/chatbot", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ message: message })
-    })
-    .then(res => res.json())
-    .then(data => {
-
-        // REMOVE TYPING
-        typing.remove();
-
-        // BOT MESSAGE
-        let botDiv = document.createElement("div");
-        botDiv.className = "bot-msg";
-        botDiv.innerText = data.reply;
-
-        chat.appendChild(botDiv);
-
-        // AUTO SCROLL
-        chat.scrollTop = chat.scrollHeight;
-    });
-
-    // CLEAR INPUT
-    input.value = "";
-}
-
+// Check saved theme on load immediately
+document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    if(savedTheme === "dark") {
+        setDarkMode(true);
+    }
+});
 </script>
+
+<!-- Dark Mode Toggle Button -->
+<button class="theme-toggle-btn" onclick="toggleDarkMode()" id="themeToggle" aria-label="Toggle Dark Mode">
+    🌙
+</button>
 
 </body>
 </html>

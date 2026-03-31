@@ -47,6 +47,12 @@
     margin: 50px auto;
     border-radius: 5px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    animation: fastWingPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes fastWingPop {
+    0% { transform: scale(0.3); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
 /* Stylish Bold College Name */
@@ -81,8 +87,51 @@
 
 /* Page Background */
 body{
-    background: linear-gradient(135deg,#2193b0,#6dd5ed);
-    font-family: 'Arial', sans-serif;
+    background: linear-gradient(-45deg, #59257a, #b81414, #b37c2e, #a81c4e);
+    background-size: 400% 400%;
+    animation: festiveBG 15s ease infinite;
+    font-family: 'Poppins', sans-serif;
+}
+
+@keyframes festiveBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Festive Button */
+.btn-festive {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white !important;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 65, 108, 0.4);
+}
+.btn-festive:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 65, 108, 0.6);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .college-name {
+        font-size: 24px;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* ensures readability */
+    }
+    .college-subtext {
+        font-size: 16px;
+    }
+    .home-header {
+        padding: 20px 10px;
+        margin: 15px;
+    }
+    .middle-logo {
+        width: 60%;
+        max-width: 180px;
+        margin: 30px auto;
+    }
 }
 
 </style>
@@ -90,7 +139,7 @@ body{
 <!-- Existing Home Content -->
 <div class="container text-center mt-4">
 
-    <a href="/events" class="btn btn-primary px-4 py-2">
+    <a href="/events" class="btn btn-festive px-5 py-3 mt-3">
        <b>View All Events →</b>
     </a>
 

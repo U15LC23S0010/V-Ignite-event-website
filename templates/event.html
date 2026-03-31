@@ -4,7 +4,17 @@
 <style>
 
 body{
-    background: linear-gradient(135deg,#2193b0,#6dd5ed);
+    background: linear-gradient(-45deg, #59257a, #b81414, #b37c2e, #a81c4e);
+    background-size: 400% 400%;
+    animation: festiveBG 15s ease infinite;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+@keyframes festiveBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Back Button */
@@ -13,14 +23,19 @@ body{
     margin:20px;
     padding:8px 18px;
     border-radius:20px;
-    background:#2193b0;
-    color:white;
+    background: white;
+    color: #ff416c;
     text-decoration:none;
     font-weight:bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
 
 .back-btn:hover{
-    background:#176c8a;
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    color: #ff4b2b;
 }
 
 /* Main Card */
@@ -40,15 +55,20 @@ body{
     height:180px;
     object-fit:cover;
     border-radius:15px;
-    border:2px solid #2193b0;
+    border:4px solid #f9d423;
+    box-shadow: 0 8px 20px rgba(249, 212, 35, 0.4);
     margin-bottom:15px;
 }
 
 /* Title */
 .event-title{
     font-size:28px;
-    font-weight:bold;
-    color:#2193b0;
+    font-weight:900;
+    margin-bottom:10px;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* About */
@@ -83,6 +103,26 @@ body{
     margin:8px 0;
     border-radius:10px;
     box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .event-detail-card {
+        margin: 20px 15px;
+        padding: 20px;
+    }
+    .event-image {
+        width: 130px;
+        height: 130px;
+    }
+    .event-title {
+        font-size: 24px;
+    }
+    .back-btn {
+        margin: 15px;
+        font-size: 14px;
+        padding: 6px 14px;
+    }
 }
 
 </style>
